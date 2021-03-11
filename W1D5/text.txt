@@ -1,0 +1,20 @@
+             Assignment:W1D5
+ 1. What are alternatives to default parameters?
+ 2. What are things you should consider while naming a function?
+                Answer
+ 1. The alternateve to default parametrs are using default value as function parametrs
+      example 1. 
+      function name(name1){
+           name1=name1 || 'no name'
+      } 
+      example 2.
+      function name2(name='no name'){
+
+      }
+  2. The function name have to have the name which describes 
+       for what we are doing(choosing word with meaning).
+         -Avoiding generic names(like temp)
+         - do make the name function too long or too short
+         
+
+

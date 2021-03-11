@@ -1,0 +1,46 @@
+   Assignment W1D1 of CS301js
+Answer
+
+1.
+  a. What happens when an assignment is performed without using let or const keywords in
+strict mode?
+
+"use strict";
+x=4;
+y=7;
+console.log(y+x);
+
+Answer: 
+it couses an error, because the variablse x and y are not defined.
+The error looks like: ReferenceError:
+x is not defined
+
+  b.List 5 reserved keywords in JavaScript.
+  for, let,const ,var,while 
+2.How is a computer program similar/ different than an algorithm.
+   a computer program is sequence of instractions that can give us an out put using any specfice programing language, 
+but algorithm is a step by step operation that can be uesd to solve a problem.
+ In geneneral an algorithm  is a pseudo code.
+3.a.preparing My break fast
+   -washing and making ready all equipments 
+   -crusing red onion and tomato
+   -mixing the onion and tomato prepare befor using mixing bowl by giving heat
+   -adding souse, salt and oil.
+   -finally eating using Enjera.
+   b.playing Soccore
+    -getting sportsclose and sportshoose
+    -warming up my body
+    -playing 45 munites
+
+    - aftre 45 rappup
+ 
+   let prompt=require("prompt-sync")(); 
+  let sportMaterial=prompt("Did you get you sport materials?: ");
+   if(sportMaterial=="No"){
+ console.log("first you have to get sportMaterial");
+}else{
+ console.log("you can go and play soccore: ");
+}
+
+   
+

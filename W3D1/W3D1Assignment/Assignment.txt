@@ -1,0 +1,15 @@
+W3D1: Assignment CS301 String And Object
+           Give Short Answer
+1. How can you make a copy of an object?
+2. How do you remove the white spaces that may be at the beginning and ending of a string 
+value?
+                Answer:
+  1. Objects are stored and copy by referance
+    to copy an object in javascript
+    you have three option 
+           ->use the spreed syntax  
+           ->use the object.assign method
+           ->use the Json.stringify
+    copy an object variable creates one more referance to the same object
+  2.can remove the space from front and back by built helpfull method which is 
+       .trim();                  
