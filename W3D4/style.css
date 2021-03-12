@@ -1,0 +1,14 @@
+body {
+  background-color: burlywood;
+}
+p {
+  color: red;
+  background-color: blanchedalmond;
+  text-align: center;
+}
+h1 {
+  font-family: "Courier New";
+  text-decoration: overline;
+  /* <background-image: url(./image/Seldi.png); */
+  border: 2px solid;
+}

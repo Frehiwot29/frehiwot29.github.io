@@ -1,7 +1,5 @@
 "use strict";
 let arr = [{ name: "abc", age: 20 }, { name: "xyz", age: 10 }];
-
-
 /**
  * 
  * @param {Array} users to av
@@ -13,6 +11,5 @@ function getAverageAge(users) {
         sum += users[i].age;
     }
     return sum / users.length;
-
 }
 console.log(getAverageAge(arr));
