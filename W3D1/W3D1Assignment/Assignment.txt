@@ -12,4 +12,16 @@ value?
            ->use the Json.stringify
     copy an object variable creates one more referance to the same object
   2.can remove the space from front and back by built helpfull method which is 
-       .trim();                  
+       .trim();   
+
+       quez of css
+       . What are the possible ways a HTML document gets its style? List them in ascending 
+order of precedence.
+2. What is the use of HTML id and class attributes?
+3. p, h1 all have two css properties in common let us say font-family and color. But h1 
+has larger font-size than that of p and p also have background-color yellow. Now, 
+write CSS with least redundancy possible.
+4. Would it be better to use a class, id or element when?
+• You want to style one paragraph representing your company's mission statement
+• Several list items are important, they should appear
+

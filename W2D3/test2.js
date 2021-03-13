@@ -60,6 +60,4 @@ describe("LCM ", function () {
     it("lcm of 3 and 27 is 27", function () {
         assert.strictEqual(app.LCM(81, 9), 81);
     });
-
-
 });
