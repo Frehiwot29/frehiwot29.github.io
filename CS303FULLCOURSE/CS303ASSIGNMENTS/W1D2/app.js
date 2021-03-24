@@ -1,6 +1,6 @@
 "use strict";
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-//module.exports = { findTitles }; //add all of your function names here that you need for the node mocha tests
+//module.exports = { findTitles, findAuthor, findID }; //add all of your function names here that you need for the node mocha tests
 
 
 let library = [
@@ -40,44 +40,58 @@ function findTitles() {
 /**
  * @returns {object} array holdig all authet
  */
-function showAuther() {
-    const author = findAuthor();
-    author.sort();
-    const autherString = author.join("\n");
+function showAuthors() {
+    const authors = findAuthors();
+    authors.sort();
+    const authorString = authors.join("\n");
 
     let textArea = document.getElementById("displayArea");
-    textArea.innerHTML = autherString;
+    textArea.innerHTML = authorString;
 }
 /**
  * 
  * @returns {object} array
  */
-function findAuthor() {
-    let author = [];
-    author = ["Bill Gates", "Steve Jobs", "Suzanne Collins"];  //FIX THIS!!
+function findAuthors() {
+    let authors = [];
+    authors = ["Bill Gates", "Steve Jobs", "Suzanne Collins"];  //FIX THIS!!
     // implement this and other functions
-    return author;
+    return authors;
 
 }
 /**
  * @returns {Object} to find
  */
 function showID() {
-    const idBook = findID();
-    idBook.sort();
-    const idString = idBook.join("\n");
+    const ids = findID();
+    ids.sort();
+    const idsString = ids.join("\n");
 
     let textArea = document.getElementById("displayArea");
-    textArea.innerHTML = idString;
+    textArea.innerHTML = idsString;
 }
 /**
  * 
- * @returns {object} array
+ * @returns {number} array
  */
 function findID() {
-    let idBook = [];
-    idBook = [1254, 4264, 3245];  //FIX THIS!!
+    let ids = [];
+    ids = [1254, 4264, 3245];  //FIX THIS!!
     // implement this and other functions
-    return idBook;
+    return ids;
 
+}
+/**
+ * 
+ * @param {number} libraryID to
+ * @param {String} title to
+ * @param {String} author to
+ * @return {Object} object
+ */
+function addBook(libraryID, title, author) {
+    let newBook = {};
+    newBook.libraryID = 1144;
+    newBook.title = "My New Book";
+    newBook.author = "Me Too";
+    return newBook;
 }
