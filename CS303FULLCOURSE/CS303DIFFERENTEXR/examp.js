@@ -105,17 +105,48 @@ function sumInput() {
 }
 console.log(sumInput());*/
 //class example
-function sayHi() {
-    console.log("Hello");
+/*function sayHi() {
+    console.log("Hello");//hello
 }
 const myHi = sayHi;
-//console.log(sayHi);
-console.log(sayHi());
+//console.log(sayHi);// the result is the function
+console.log(sayHi());// calling the function
 // function higherOrder() {
 //     return sayHi();
 // }
 // higherOrder();
-function higherOrder() {
-    return sayHi;
+// function higherOrder() {
+//     return sayHi();// calling again
+// }
+// higherOrder();*/
+/*let age = 18;
+let welcome;
+if (age >= 18) {
+    welcome = function () {
+        console.log("Hello!");
+    };
+} else {
+    welcome = function () {
+        console.log("Greetings!");
+    };
 }
-higherOrder()();
+welcome();*/
+function getMaxSubSum(arr) {
+    let maxSum = 0; // if we take no elements, zero will be returned
+
+    for (let i = 0; i < arr.length; i++) {
+        let sumFixedStart = 0;
+        for (let j = i; j < arr.length; j++) {
+            sumFixedStart += arr[j];
+            maxSum = Math.max(maxSum, sumFixedStart);
+        }
+    }
+
+    return maxSum;
+}
+
+console.log(getMaxSubSum([-1, 2, 3, -9])); // 5
+console.log(getMaxSubSum([-1, 2, 3, -9, 11])); // 11
+console.log(getMaxSubSum([-2, -1, 1, 2])); // 3
+console.log(getMaxSubSum([1, 2, 3])); // 6
+console.log(getMaxSubSum([100, -9, 2, -3, 5])); // 100

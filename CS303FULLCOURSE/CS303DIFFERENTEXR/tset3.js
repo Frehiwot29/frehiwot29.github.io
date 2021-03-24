@@ -1,24 +1,23 @@
 "use strict";
 /*eslint-disable*/
-/*function sumMatrics(arr){
-    let result=[];
-    let sum=0;
-    for(let i=0;i<arr.length;i++){
-        for(let j=i+1;j<arr[i].length;j++){
-            sum+=arr[i][j];
-            result.push(sum);
-        }
+
+const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+        sum += arr[i][j];
+        //result.push(sum);
     }
-    return result;
 }
-const arr=[[1,2,3],[4,5,6],[7,8,9]];
-console.log(sumMatrics(arr));*/
+console.log(sum);
 //another
+//const arr=[[1,2,3],[4,5,6],[7,8,9]];
 let total = 0;
 for (const innerArray of arr) {
-    for (const number in arr) {
+    for (const number of innerArray) {
         total += number;
     }
 }
-const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-console.log(arr);
+
+console.log(total);
+
