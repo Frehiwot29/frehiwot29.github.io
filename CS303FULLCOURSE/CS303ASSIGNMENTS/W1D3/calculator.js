@@ -1,22 +1,35 @@
 "use strict";
 /*eslint-disable*/
-const prompt = require("prompt-sync")();
 /**
- * @returns {number} unmber of sum and mul;tiple
+ *  * @returns {Calculator} constructor function
  */
 function Calculator() {
-    this.getValues = function (oprend1, oprend2) {
-        this.value1 = oprend1;
-        this.value2 = oprend2;
-    }
+    /**
+     * 
+     * @returns{Number} sum;
+     */
     this.sum = function () {
-        return this.value1 + this.value2;
-    }
-    this.multi = function () {
-        return this.value1 * this.value2;
+        return this.num1 + this.num2;
     };
-}
-let calculator = new Calculator();
-calculator.getValues(16, 6);
-console.log("Sum=" + calculator.sum());
-console.log("Mul=" + calculator.multi());
+    /**
+     * 
+     * @returns {Number} multiplication;
+     */
+    this.mul = function () {
+        return this.num1 * this.num2;
+    }
+    /**
+     * 
+     * @returns {Number} subtraction;
+     */
+    this.sub = function () {
+        return this.num1 - this.num2
+    }
+    /**
+     * 
+     * @returns {Number} division;
+     */
+    this.div = function () {
+        return this.num1 / this.num2;
+    }
+};

@@ -1,48 +1,62 @@
 "use strict";
-
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-module.exports = { Accumulator, Calculator }; //add all of your function names here that you need for the node mocha tests
-
-
-
+/*eslint-disable*/
 /**
- * @returns {number} unmber of sum and mul;tiple
+ *  * @returns {Calculator} constructor function
  */
 function Calculator() {
-    this.getValues = function (oprend1, oprend2) {
-        this.value1 = oprend1;
-        this.value2 = oprend2;
-    },
-        this.sum = function () {
-            return this.value1 + this.value2;
-
-        },
-        this.multi = function () {
-            return this.value1 * this.value2;
-
-        };
-}
-let calculator = new Calculator();
-calculator.getValues(16, 6);
-
-console.log("Sum=" + calculator.sum());
-console.log("Mul=" + calculator.multi());
-
-
-/**
- * @param {number} initialValue to
- * @param {number}increament to injiih
- * @return {number} number
- */
-function Accumulator(initialValue, increament) {
-    this.currenValue = initialValue;
-    this.read = function () {
-        this.increamented = increament;
-        return this.increamented;
+    /**
+     * 
+     * @returns{Number} sum;
+     */
+    this.sum = function () {
+        return this.num1 + this.num2;
     };
+    /**
+     * 
+     * @returns {Number} multiplication;
+     */
+    this.mul = function () {
+        return this.num1 * this.num2;
+    }
+    // /**
+    //  * 
+    //  * @returns {Number} subtraction;
+    //  */
+    // this.sub = function () {
+    //     return this.a - this.b
+    // }
+    // /**
+    //  * 
+    //  * @returns {Number} division;
+    //  */
+    // this.div = function () {
+    //     return this.a / this.b;
+    // }
+};
+/**
+ * 
+ * @param {*} currentValue 
+ * @param {*} increment 
+  * @returns {Accumulator} constructor function
+ */
+function Accumulator(currentValue, increment) {
+    this.currentValue = currentValue;
+    this.increment = increment;
+    /**
+     * 
+     * @returns current values+ increment
+     */
+    this.accumulate = function () {
+        return this.currentValue += this.increment;
+    }
+    /**
+     * 
+     * @returns the current values
+     */
+    this.report = function () {
+        return this.currentValue;
+    }
 }
-let accumulator = new Accumulator(2, 6);
-console.log(accumulator.currenValue);
-accumulator.read();
-//accumulator.read();
-console.log(accumulator.increamented);
+let acu = new Accumulator(4, 6);
+let acum = new Accumulator(4, 6);
+accumulate();
