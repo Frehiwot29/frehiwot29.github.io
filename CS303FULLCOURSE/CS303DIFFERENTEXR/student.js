@@ -29,11 +29,11 @@ function scoreQuiz(stuAnswer, key) {
     return 10;
 }
 console.log(gradeQuez(quiz, key));
-let sum=0;
-for(const result in score){
-sum+=result;
+let sum = 0;
+for (const result in score) {
+    sum += result;
 }
-return Math.floor(sum/report);
+return Math.floor(sum / report);
 /*let x = 5;
 let y = { x };
 console.log(y);
@@ -51,18 +51,19 @@ Write a function, averageScore, that takes the grade report object and returns
  but if you are not sure how to do that at least make it work for the given 3 students. 
  Hint: to handle any number remember the for .. in slide.
  */
+
 const gradeReport = { s101: 3, s102: 2, s103: 3 };
-function averageScor(grades){
-    let total=0;
-    let count=0;
-    for(const studeId in grades){
-        total=grades[studeId];
+function averageScor(grades) {
+    let total = 0;
+    let count = 0;
+    for (const studeId in grades) {
+        total = grades[studeId];
         count++;
     }
-    const average=total/count;
+    const average = total / count;
     return average;
 
 }
-const totalScore=gradeReport.s101+gradeReport.s102+gradeReport.s103;
-console.log(totalScore/3);
+const totalScore = gradeReport.s101 + gradeReport.s102 + gradeReport.s103;
+console.log(totalScore / 3);
 console.log(averageScor(gradeReport));

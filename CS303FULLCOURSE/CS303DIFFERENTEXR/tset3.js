@@ -21,7 +21,7 @@ for (const innerArray of arr) {
 
 console.log(total);*/
 
-let user = {
+/*let user = {
     name: "John",
     age: 30,
     isAdmin: true
@@ -32,4 +32,9 @@ for (let key in user) {
     // values for the keys
     console.log(user[key]); // John, 30, true
 
+}*/
+function sayHi() {
+    console.log(this);
 }
+
+sayHi();
