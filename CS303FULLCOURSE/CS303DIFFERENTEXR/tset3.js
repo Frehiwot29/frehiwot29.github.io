@@ -1,7 +1,7 @@
 "use strict";
 /*eslint-disable*/
 
-const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+/*const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 let sum = 0;
 for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
@@ -19,5 +19,17 @@ for (const innerArray of arr) {
     }
 }
 
-console.log(total);
+console.log(total);*/
 
+let user = {
+    name: "John",
+    age: 30,
+    isAdmin: true
+};
+for (let key in user) {
+    // keys
+    console.log(key); // name, age, isAdmin
+    // values for the keys
+    console.log(user[key]); // John, 30, true
+
+}

@@ -42,3 +42,27 @@ console.log(y);
 function sum(arr){let lot=0; return toString;}
 const myexports=sum;
 const exportsObj={sum};*/
+
+/**
+ * const gradeReport = { s101: 3, s102: 2, s103: 3 };
+
+Write a function, averageScore, that takes the grade report object and returns
+ the average score of all the students. Your function should work for any number of students, 
+ but if you are not sure how to do that at least make it work for the given 3 students. 
+ Hint: to handle any number remember the for .. in slide.
+ */
+const gradeReport = { s101: 3, s102: 2, s103: 3 };
+function averageScor(grades){
+    let total=0;
+    let count=0;
+    for(const studeId in grades){
+        total=grades[studeId];
+        count++;
+    }
+    const average=total/count;
+    return average;
+
+}
+const totalScore=gradeReport.s101+gradeReport.s102+gradeReport.s103;
+console.log(totalScore/3);
+console.log(averageScor(gradeReport));
