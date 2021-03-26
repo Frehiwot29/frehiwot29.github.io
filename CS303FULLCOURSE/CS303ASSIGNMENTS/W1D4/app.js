@@ -1,50 +1,59 @@
 "use strict";
-/* eslint-disable */
+///* eslint-disable */
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 module.exports = { ucFirst, checkSpam, getMaxSubSum, truncate, extractCurrencyValue, camelize }; //add all of your function names here that you need for the node mocha tests
-
-
-
+/**
+ * 
+ * @param {String} str to
+ * @return {String} to upper case
+ */
 function ucFirst(str) {
     if (!str) {
         return str;
     }
     return str[0].toUpperCase() + str.slice(1);
-
 }
 console.log(ucFirst("john"));
 console.log(ucFirst("Ann"));
 console.log(ucFirst("Abram"));
-
-
-
+/**
+ * 
+ * @param {String} str to 
+ * @return{String} to lower
+ */
 function checkSpam(str) {
     let lowerStr = str.toLowerCase();
 
-    return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+    return lowerStr.includes("viagra") || lowerStr.includes("xxx");
 }
-console.log(checkSpam('buy ViAgRA now'));
-console.log(checkSpam('free xxxxx'));
+console.log(checkSpam("buy ViAgRA now"));
+console.log(checkSpam("free xxxxx"));
 console.log(checkSpam("innocent rabbit"));
-
-
-
-
+/**
+ * 
+ * @param {String} str to
+ * @param {number} maxlength to compare
+ * @return {number} to
+ */
 function truncate(str, maxlength) {
     return (str.length > maxlength) ?
-        str.slice(0, maxlength - 1) + '…' : str;
+        str.slice(0, maxlength - 1) + "…" : str;
 }
 console.log(truncate("What I'd like to tell on this topic is:", 20));
 console.log(truncate("Hi everyone!", 20));
 console.log(truncate("Hi everyone!", 20));
-
+/**
+ * 
+ * @param {String} str to 
+ * @return {number} to
+ */
 function extractCurrencyValue(str) {
     return +str.slice(1);
 }
-console.log(extractCurrencyValue('$120') === 120);
-console.log(extractCurrencyValue('$120') === 120);
-console.log(extractCurrencyValue('$120') === 120);
+console.log(extractCurrencyValue("$120") === 120);
+console.log(extractCurrencyValue("$120") === 120);
+console.log(extractCurrencyValue("$120") === 120);
 /**
  * What is this code going to show?
  */
@@ -75,23 +84,22 @@ console.log(getMaxSubSum([-2, -1, 1, 2])); // 3
 console.log(getMaxSubSum([100, -9, 2, -3, 5])); // 100
 console.log(getMaxSubSum([1, 2, 3])); // 6
 console.log(getMaxSubSum([-1, -2, -3])); // 0
-
-
-
-
-
-
+/**
+ * 
+ * @param {String} str to
+ * @return {String} str
+ */
 function camelize(str) {
     return str
-        .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
+        .split("-") // splits 'my-long-word' into array ['my', 'long', 'word']
         .map(
             // capitalizes first letters of all array items except the first one
             // converts ['my', 'long', 'word'] into ['my', 'Long', 'Word']
             (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
         )
-        .join(''); // joins ['my', 'Long', 'Word'] into 'myLongWord'
+        .join(""); // joins ['my', 'Long', 'Word'] into 'myLongWord'
 }
-console.log(camelize("background-color") == 'backgroundColor');
-console.log(camelize("list-style-image") == 'listStyleImage');
-console.log(camelize("-webkit-transition") == 'WebkitTransition');
+console.log(camelize("background-color") == "backgroundColor");
+console.log(camelize("list-style-image") == "listStyleImage");
+console.log(camelize("-webkit-transition") == "WebkitTransition");
 
