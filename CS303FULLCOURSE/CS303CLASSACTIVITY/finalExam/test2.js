@@ -40,7 +40,7 @@ checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]) →16
 checkExam(["b", "c", "b", "a"], ["", "a", "a", "c"]) →0
 
  */
-function checkExam(key, answer) {
+/*function checkExam(key, answer) {
     let result = 0;
     for (let i = 0; i < key.length; i++) {
         if (key[i] === answer[i]) {
@@ -53,7 +53,7 @@ function checkExam(key, answer) {
     return result;
 
 }
-console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]));
+console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]));*/
 /**
  *  Write a function ‘thisProgramIsTheBest’ which takes 3 parameters. First two 
 parameters are objects that have property ‘age and the last one is a function, 
@@ -74,7 +74,7 @@ Ages”.
 /**
  * . Fill in the blanks below ?
  */
-function haveFun() {
+/*function haveFun() {
     let fun = {
         myFuns: []
     }
@@ -95,4 +95,18 @@ let output2 = result.myFuns[0]();
 console.log(anotherFun); //_function itself______
 console.log(result); //_____object__________________
 console.log(output1);// _________function______________
-console.log(output2);//fun 3
+console.log(output2);//fun 3*/
+
+/**
+ * ] Write an iterative function, sumOfSquares(n) that will compute the sum of squares of 
+all integers from 1 to n. E.g., sumOfSquares(3) will compute 1 + 4 + 9 and return 14.
+ */
+function sumOfSquares(num) {
+    let result = 0;
+    for (let i = 0; i < num; i++) {
+        result += i * i;
+
+    }
+    return result;
+}
+console.log(sumOfSquares(3));
