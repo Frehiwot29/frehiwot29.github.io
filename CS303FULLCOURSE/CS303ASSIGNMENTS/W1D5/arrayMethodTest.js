@@ -83,22 +83,16 @@ describe("sort users bay age", function () {
     let johhn = { name: "John", age: 25 };
     let pette = { name: "Pete", age: 30 };
     let marry = { name: "Mary", age: 28 };
-
-    //let arr5 = [pette, johhn, marry];
     it("sorted", function () {
         arr.sort((num1, num2) => num1.age - num2.age);
-        let arr1 = [pette, johhn, marry];
-        //let num = sortByAge(arr1);
-        assert.strictEqual(sortByAge(arr1), John, Mary, Pete);
-        // assert.strictEqual(sortByAge(arr1[1].name), johhn);
-        // assert.strictEqual(sortByAge(arr1[2].name), marry);
+        let arr5 = [pette, johhn, marry];
+        assert.deepEqual(sortByAge(arr5.age), John, Mary, Pete);
     });
-
 });
-describe("sheffil", function () {
-    it("shefil", function () {
-        let arr2 = [1, 2, 3];
-        assert.strictEqual(shuffle(arr2), [3, 2, 1]);
+describe("decreasing order of the array", function () {
+    let arr6 = [1, 2, 3];
+    it("shuffle", function () {
+        assert.notDeepEqual(shuffle(arr6), [3, 2, 1]);
     });
 });
 /* Create a function unique(arr) that should return an array with unique items of arr. */
@@ -135,18 +129,21 @@ describe("groupById", function () {
     });
     // it("works with an empty array", function () {
     //     users = [];
-    //     assert.deepEqual(groupById(users), {});
+    //     assert.strictEqual(groupById(users), {});
     // });
 });
-
 describe("average by id", function () {
     let jjohn = { name: "John", age: 25 };
     let ppete = { name: "Pete", age: 30 };
     let mmary = { name: "Mary", age: 29 };
-
     it("average by id", function () {
         let arr7 = [jjohn, ppete, mmary];
         assert.strictEqual(getAverageAge(arr7), 28);
     });
-
+});
+describe("copySorted", function () {
+    it("copySorted", function () {
+        let arr4 = ["HTML", "JavaScript", "CSS"];
+        assert.deepEqual(copySorted(arr4), ["CSS", "HTML", "JavaScript"]);
+    });
 });
