@@ -3,7 +3,7 @@
 /*let calculator = function (num1, num2, calcType) {
     if (calcType === "add") {
         return num1 + num2;
-    } else if (calcType === "subt") {
+    } else if (calcType === "sub") {
         return num1 - num2;
 
     } else if (calcType === "multi") {
@@ -13,7 +13,7 @@
     }
 };
 console.log(calculator(2, 3, "add"));
-console.log(calculator(2, 3, "subt"));
+console.log(calculator(2, 3, "sub"));
 console.log(calculator(2, 3, "multi"));
 console.log(calculator(2, 3, "div"));*/
 

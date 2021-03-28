@@ -24,9 +24,17 @@ function compareNumber(a, b) {
     if (a < b)
         return -1;
 }
+function compareDiceasingNumber(a, b) {
+    if (a > b)
+        return -1;
+    if (a === b)
+        return 0;
+    if (a < b)
+        return 1;
+}
 function decreasingNumberlex(a, b) {
-    // a = "" + b;
-    // b = "" + a;
+    a = "" + a;
+    b = "" + b;
     if (a < b)
         return 1;
     if (a === b)
@@ -39,7 +47,9 @@ arr.sort(compareNumber);
 console.log(arr);
 let arr1 = [1, 15, 2];
 arr.sort(decreasingNumberlex);
-console.log(arr);
+console.log("expect [2,15,1]: ", arr);
+arr.sort(compareDiceasingNumber);
+console.log("expect [15,2,1]: ", arr);
 /**
  * reduce the array
  */
