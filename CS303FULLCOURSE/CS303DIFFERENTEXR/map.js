@@ -7,6 +7,7 @@
  */
 let length = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
 console.log(length); // 5,7,6
+
 let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(
     function (item, index) {
         const newItem = "" + index + ": " + item.length;
