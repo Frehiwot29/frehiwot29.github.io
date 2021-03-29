@@ -1,4 +1,7 @@
 "use strict";
+
+const { orange } = require("color-name");
+
 /*eslint-disable*/
 /*function maxOfThree(a, b, c) {
     if (a > b && a > c) {
@@ -170,7 +173,7 @@ console.log(goodBye());//goodBay*/
     that has them sorted in ascending order.
     e.g. calling sortThis(5, 2, 3) should return [2, 3, 5]
  */
-function sortThis(a, b, c) {
+/*function sortThis(a, b, c) {
     let result = [];
     if (a > b && a > c) {
         result[2] = a;
@@ -204,13 +207,13 @@ function sortThis(a, b, c) {
     }
     return result;
 }
-console.log(sortThis(5, 2, 3));
+console.log(sortThis(5, 2, 3));*/
 
 /**
  * Write a function named somethingOdd that takes an array of numbers as input and
  * returns the product of all the array values at the odd indices.
  */
-function somethingOdd(arr) {
+/*function somethingOdd(arr) {
     let product = 1;
     for (let i = 0; i < arr.length; i++) {
         if (i % 2 !== 0) {
@@ -219,7 +222,7 @@ function somethingOdd(arr) {
     }
     return product;
 }
-console.log(somethingOdd([1, 2, 3, 4, 5, 6, 7]));
+console.log(somethingOdd([1, 2, 3, 4, 5, 6, 7]));*/
 
 /**
  * a) Create a student object with the properties first name and last name. 
@@ -227,7 +230,7 @@ console.log(somethingOdd([1, 2, 3, 4, 5, 6, 7]));
  * c) Use the forEach method to print out all the values and indices. Use function 
  * declarations to declare any functions in the code.
  */
-let student1 = {
+/*let student1 = {
     fName: "Adonay",
     lName: "Kassa",
     age: 5
@@ -241,33 +244,92 @@ let student2 = {
 let arr = [student1, student2];
 arr.forEach(function (value, index) {
     console.log("FName: " + value.fName + " lName: " + value.lName + " index: " + index);
-});
+});*/
 
 /**
  *  Write a function ‘multiplyAll’ which takes an array as a parameter and returns the 
  * product of all the values in this array. You have to use the reduce method. Include an initial 
  * value. Use function declarations for all functions you write.
  */
-function multipleAll(arr) {
+/*function multipleAll(arr) {
 
     return arr.reduce((result, value) => result * value, 1);
 
 }
-console.log(multipleAll([1, 2, 3, 4]));
+console.log(multipleAll([1, 2, 3, 4]));*/
 /**
  * Write a function ‘thisProgramIsTheBest’ which takes 3 parameters. First two
  * parameters are objects that have property ‘color’ and the last one is a function, “cbFun”. If
  * the color properties are equal, then return “Same color!”, otherwise call the cbFun function
  * with the input parameters as arguments, and then return “Different colors”.
  */
-function thisProgramIsTheBest(obj1, obj2, cbfun) {
+/*function thisProgramIsTheBest(obj1, obj2, cbfun) {
     if (obj1.color === obj2.color) {
         return "same Color";
     } else {
         cbfun(obj1, obj2)
         return "Different colores"
     }
+}*/
+
+//mid exam
+/*let counter = {
+    count: 0,
+    increment() {
+        this.count++;
+    },
+    decrement() {
+        this.count--;
+    },
+    showCount: function () {
+        console.log(this.count);
+    }
+
+};
+counter.increment().decrement().increment().showCount();*/
+
+/*function squareOfCube(value, square, cube) {
+    if (value < 10) {
+        square = value * value;
+        return square;
+    } else {
+        cube = value * value * value;
+        return cube;
+    }
 }
+console.log(squareOfCube(10, square, cube));
+console.log(squareOfCube(9, square, cube));*/
+//ckeck
+/*function check() {
+    return "hi";
+}
+console.log(check);//fun
+console.log(check());//hi
+apple = check;
+orange = check();
+console.log(apple);
+console.log(orange);
+boat = [apple, apple()];
+console.log(boat[0]);
+console.log(boat[0]());
+console.log(boat[1]);
+console.log(orange());
+console.log(boat[1]());*/
+//destructure
+let [name1, name2, ...remainder] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+console.log(name1); // Julius
+console.log(name2); // Caesar
+
+// Note that type of `rest` is Array.
+console.log(remainder[0]); // Consul
+console.log(remainder[1]); // of the Roman Republic
+console.log(remainder.length);
+//destructure
+const team = [ "Bob", "Fred", "Jim"];
+// destructure the team array onto variables with the same names as the properties, but all lower case
+const ["Bob","Fred","Jim"]=team
+console.log("expect Bob", bob );
+console.log("expect Jim", jim);
 
 
 

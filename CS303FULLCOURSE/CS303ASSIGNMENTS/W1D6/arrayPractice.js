@@ -26,7 +26,7 @@ function doubleNums(arr) {
  * @return {Array} array
  */
 function doubleAges(arr) {
-    return arr.map(item => item.age * 2);
+    return arr.map(item => item.age *= 2);
 
 
 
