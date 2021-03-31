@@ -1,21 +1,45 @@
 "use strict";
-
-//const { assert } = require("node:console");
-
 /*eslint-disable*/
-describe("tex", function () {
-    it("tex", function () {
-        let number = [4, 5, 6, 7, 8, 9];
-        assert.deepEqual(myFilter(number), [4, 6, 8]);
-    });
-    it("tex", function () {
-        let num = [1, 2, 3, 4, 5, 6];
-        assert.strictEqual(myMap(),);
-
-    });
-    it("tex", function () {
-        let num = [1, 2, 3, 4, 5, 6, 7, 8];
-        assert.deepEqual(myReduce(num), 40320);
+describe("My own map", function () {
+    beforeEach(function () {
+        array = [1, 2, 3, 4, 5];
     });
 
+    it("doubles an array of numbers", function () {
+        function arrTimesthree(arr) {
+            let result = [];
+            for (let values of arr) {
+                result.push(values * 3);
+            }
+            return result;
+        }
+        assert.deepEqual(myMap(array, arrTimesthree), [3, 6, 9, 12, 15]);
+        assert.deepEqual(array, [1, 2, 3, 4, 5]);  //test for pure function
+    });
 });
+
+// it("To Filter the even on", function () {
+    //     function filterNum(arr) {
+    //         let result = []
+    //         for (let n of arr) {
+    //             if (n % 2 === 0) {
+    //                 result.push(n)
+    //             }
+    //         }
+    //         return result;
+    //     }
+    //     assert.deepEqual(myFilter(num1, filterNum), [2, 4, 6]);
+    //     assert.deepEqual(num1, [1, 2, 3, 4, 5, 6]);
+    // });
+    // it("To Reduce the number on", function () {
+    //     function sumUp(arr) {
+    //         let sum = 0;
+    //         for (let n of arr) {
+    //             sum += n
+    //         }
+    //         return sum;
+    //     }
+    //     assert.deepEqual(myReduce(num1, sumUp), 21);
+    //     assert.deepEqual(num1, [1, 2, 3, 4, 5, 6]);
+    // });
+
