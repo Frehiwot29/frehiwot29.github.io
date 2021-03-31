@@ -8,6 +8,11 @@ let company = { // the same object, compressed for brevity
     }
 };
 // The function to do the job
+/**
+ * 
+ * @param {Object} department 
+ * @return {number} the sum of one
+ */
 function sumSalaries(department) {
     if (Array.isArray(department)) { // case (1)
         return department.reduce((prev, current) => prev + current.salary, 0); // sum the array
@@ -20,4 +25,21 @@ function sumSalaries(department) {
     }
 }
 console.log(sumSalaries(company)); // 6700
+/**
+ * 
+ * @return {number} the max one
+ */
+function findMax() {
+    var max = -Infinity;
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+const max1 = findMax(1, 123, 500, 115, 66, 88);
+const max2 = findMax(3, 6, 8);
+console.log("max1: " + max1);
+console.log("max2: " + max2);
 

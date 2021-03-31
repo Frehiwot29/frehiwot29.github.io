@@ -1,6 +1,7 @@
 
 "use strict";
 /*eslint-disable*/
+let array = [];
 describe("My own map", function () {
     beforeEach(function () {
         array = [1, 2, 3, 4, 5];
