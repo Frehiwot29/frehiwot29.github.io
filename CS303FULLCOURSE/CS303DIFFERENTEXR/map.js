@@ -68,6 +68,29 @@ console.log(result2);
 let resultMax = num.reduce(function (max, current) { return Math.max(max, current); }, -10000000);
 console.log(resultMax); //5
 
+/**
+ * To use our own sorting order, we need to supply a function as the argument of arr.sort().
+ */
+function compareNumbersLex(a, b) {
+    return a - b;
+}
+let array = [1, 15, 2];
+let num2 = array.sort(compareNumbersLex);
+console.log(num2);
+/**
+ * let arr=[1,2,7];
+arr.sort(function(a,b){return b-a});
+console.log(arr);
+ */
+/**
+ * ➢ reduce the array to the product of the numbers (“expect 120”)
+➢ reduce the array to the max of the numbers (“expect 5”)
+let arr = [1, 2, 3, 4, 5];
+ */
+let arr4 = [1, 2, 3, 4, 5];
+let nurrr=arr4.reduce((pro,item)=>pro*item,1);
+console.log(nurrr);
+
 
 
 
