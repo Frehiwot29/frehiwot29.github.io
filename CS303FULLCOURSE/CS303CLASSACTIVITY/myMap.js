@@ -62,7 +62,7 @@ console.log("expect: 15: ", myReduce(arr, sumFun, 0));
 console.log("expect: 120: ", arr.reduce(mulFun, 1));
 console.log("expect: 120: ", myReduce(arr, mulFun, 1));
 /**
- * 
+ *
  * @param {Array} arr to filter
  * @param {Object} cbk to filter
  * @return  {Array} array of number
@@ -77,8 +77,10 @@ function myFilter(arr, cbk) {
 }
 const myEvenFil = num => num % 2 === 0;
 const myoddFil = num => num % 2 !== 0;
-console.log(myFilter(myEvenFil));
-console.log(myFilter(myoddFil));
+console.log(myFilter(arr, myEvenFil));
+console.log(arr.filter(myEvenFil));
+console.log(myFilter(arr, myoddFil));
+console.log(arr.filter(myoddFil));
 
 // function myMap1(arr,cbk){
 //     let newArray=[];

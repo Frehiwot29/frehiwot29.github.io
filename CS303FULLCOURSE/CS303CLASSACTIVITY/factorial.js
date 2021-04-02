@@ -37,3 +37,4 @@ function countLetter(str, letter) {
     }
 }
 console.log(countLetter("aaaaddfsh", "a"));
+
