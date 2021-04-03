@@ -54,3 +54,7 @@ bank.totalBalance = function () {
     }
     return sum;
 }
+console.log("total balance should be 85: ", bank.getBalance());
+bank.credit(1, 20);
+bank.debit(1, 1000);
+console.log("total should now be 105: ", bank.getBalance());
