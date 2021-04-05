@@ -46,3 +46,4 @@ console.log(pets4[0]["prop1"])//cat
 console.log(pets4[1]["prop2"])//banana
 console.log(pets4[2]["prop1"])//[{ name: "Henary", age: 2, bread: "buully"}]
 console.log(pets4[2].prop1[0]["name"]);//Henary
+console.log(pets4[2].)

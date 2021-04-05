@@ -21,3 +21,4 @@ console.log(abc === node3.value);
 console.log(abc === 4);
 let rest = node1.next.next.next.next;
 console.log(rest);
+console.log(node4.next);

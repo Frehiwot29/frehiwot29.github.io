@@ -8,7 +8,6 @@ describe("My own map", function () {
         { name: "Lucy", age: 13 }, 
         { name: "Barney", age: 80 }];
     });
-
     it("doubles an array of numbers", function () {
         function double(arr){
             let doubleArr=[]
@@ -24,7 +23,6 @@ describe("My own map", function () {
        assert.deepEqual(numArray, [5, 0, 7, 77, -20, 300, 51, 2]);  //test for pure function
     });
 });
-
 //////////////////////////////////////
 describe("My own filter", function () {
     beforeEach(function () {
@@ -34,7 +32,6 @@ describe("My own filter", function () {
         { name: "Lucy", age: 13 }, 
         { name: "Barney", age: 80 }];
     });
-
     it("filter all even number", function () {
         function evenNum(arr){
             let evenArr=[]
@@ -182,8 +179,6 @@ describe("My own findLastIndex", function () {
     });
 });
 ////////////////////////////////////////////////////////
-
-
 describe("My own includes", function () {
     beforeEach(function () {
         numArray = [5, 0, 7, 77, -20, 300, 51,77, 2];

@@ -1,5 +1,16 @@
 "use strict";
 /*eslint-disable*/
+/**
+ * Create an object named bank with the following methods
+ * Q1.debit(id ,amount):,deduct amount from customer transaction , but only if the amount 
+ * is less than the current balance 
+ * Q2.credit(id ,amount):,adds positive amount to customer transaction list
+ * Q3. getBalance(id): returns current balance of that customer.The balance should be 
+ * computed as the sum of all recoreded transaction amounts.
+ * Q4. saveTransaction(id,amount):saves this transaction amount to the customer
+ *  Transaction list for this customer 
+ * Q5.getBankBalance:return sum of all customer balances
+ */
 const banks = { transactionsDB: [], };
 banks.transactionsDB = [
     { customerId: 1, customerTransactions: [10, 50, -40] },
@@ -8,35 +19,34 @@ banks.transactionsDB = [
 
 banks.getCustomer = function (id) {
     let cust = this.transactionsDB.find((customer) => customer.customerId === id)
-    return cust
+    return cust;
+}
+
+banks.getBalance = function (id) {
+    let cust = this.getCustomer(id)
+    let custBalance = cust.customerTransactions.reduce((sum, item) => sum + item, 0)
+    return custBalance;
+}
+banks.savTransaction = function (cust, amount) {
+    cust.customerTransactions.push(amount)
 }
 banks.debit = function (id, amount) {
     let cust = this.getCustomer(id)
     let balance = this.getBalance(id)
     if (amount < 0)
-        return "invalid input"
+        return "invalid input";
     if (balance < amount)
-        return "insuffiecient balance"
+        return "insuffiecient balance";
     else {
         this.savTransaction(cust, -1 * amount)
-        return "succesfully"
+        return "succesfully";
     }
-}
-banks.getBalance = function (id) {
-    let cust = this.getCustomer(id)
-    let custBalance = cust.customerTransactions.reduce((sum, item) => sum + item, 0)
-    return custBalance;
 }
 banks.credit = function (id, amount) {
     let cust = this.getCustomer(id)
     this.savTransaction(cust, amount)
     return "succesfully"
 }
-banks.savTransaction = function (cust, amount) {
-    cust.customerTransactions.push(amount)
-
-}
-
 banks.overAllBalance = function () {
     let totalBalance = 0;
     for (let cust of this.transactionsDB) {

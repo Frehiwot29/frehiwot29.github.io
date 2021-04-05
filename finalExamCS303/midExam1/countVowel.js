@@ -1,7 +1,7 @@
 "use strict";
 /*eslint-disable*/
 /**
- * Write a function, vowelcount (or function) that will take a string as innput 
+ * Write a function, vowelcount (or function) that will take a string as input 
  * and return an object that has property a,e,i,o,u.The object property values will
  * be the count of the instance of that vowel in the string .
  * use str.splite("") and best method switch

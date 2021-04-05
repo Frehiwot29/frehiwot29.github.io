@@ -33,7 +33,6 @@ console.log("expect [2, 4, 6,8,10] ", arr.map(dblFun));
 console.log("expect [2, 4, 6,8,10] ", myMap(arr, dblFun));
 console.log("expect [1,4,9, 16, 25] ", arr.map(squareFun));
 console.log("expect [1,4, 9,16, 25] ", myMap(arr, squareFun));
-
 /**
  *
  * @param {Array} arr to be processed
@@ -81,7 +80,6 @@ console.log(myFilter(arr, myEvenFil));
 console.log(arr.filter(myEvenFil));
 console.log(myFilter(arr, myoddFil));
 console.log(arr.filter(myoddFil));
-
 // function myMap1(arr,cbk){
 //     let newArray=[];
 // }
