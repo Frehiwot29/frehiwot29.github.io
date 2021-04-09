@@ -10,31 +10,34 @@ let move = 0;
 let points1 = 0;    // player 1 points
 let points2 = 0;    // player 2 points
 let size = 3;
+/**
+ * @returns {number} to play
+ */
 function drawBoard() {
     let Parent = document.getElementById("game");
     let counter = 1;
     while (Parent.hasChildNodes()) {
         Parent.removeChild(Parent.firstChild);
     }
-    for (s = 0; s < 3; s++) {
+    for (let s = 0; s < 3; s++) {
         let row = document.createElement("tr");
-        for (r = 0; r < 3; r++) {
+        for (let r = 0; r < 3; r++) {
             let col = document.createElement("td");
             col.id = counter;
             let handler = function (e) {
                 if (currentPlayer == 0) {
                     this.innerHTML = "X";
                     player1Selections.push(parseInt(this.id));
-                    player1Selections.sort(function (a, b) { return a - b });
-                    d('player1').classList.remove('selected');
-                    d('player2').classList.add('selected');
+                    player1Selections.sort(function (a, b) { return a - b; });
+                    d("player1").classList.remove("selected");
+                    d("player2").classList.add("selected");
                 }
                 else {
                     this.innerHTML = "O";
                     player2Selections.push(parseInt(this.id));
-                    player2Selections.sort(function (a, b) { return a - b });
-                    d('player1').classList.add('selected');
-                    d('player2').classList.remove('selected');
+                    player2Selections.sort(function (a, b) { return a - b; });
+                    d("player1").classList.add("selected");
+                    d("player2").classList.remove("selected");
                 }
                 if (checkWinner()) {
                     if (currentPlayer == 0)
@@ -46,7 +49,6 @@ function drawBoard() {
                     reset();
                     drawBoard();
                 }
-
                 else if (player2Selections.length + player1Selections.length == 9) {
                     reset();
                     drawBoard();
@@ -56,10 +58,10 @@ function drawBoard() {
                         currentPlayer = 1;
                     else
                         currentPlayer = 0;
-                    this.removeEventListener('click', arguments.callee);
+                    this.removeEventListener("click", arguments.callee);
                 }
             };
-            col.addEventListener('click', handler);
+            col.addEventListener("click", handler);
             row.appendChild(col);
             counter++;
         }
@@ -67,17 +69,28 @@ function drawBoard() {
     }
     loadAnswers();
 }
+/**
+ * 
+ * @param {Number} id num
+ * @returns {Number} num
+ */
 function d(id) {
-    var el = document.getElementById(id);
-    return el;
+    let elm = document.getElementById(id);
+    return elm;
 }
+/**
+ * @return {number} num
+ */
 function reset() {
     currentPlayer = 0;
     player1Selections = new Array();
     player2Selections = new Array();
-    d('player1').classList.add('selected');
-    d('player2').classList.remove('selected');
+    d("player1").classList.add("selected");
+    d("player2").classList.remove("selected");
 }
+/**
+ * @return {number} num
+ */
 function loadAnswers() {
     winners.push([1, 2, 3]);
     winners.push([4, 5, 6]);
@@ -88,6 +101,10 @@ function loadAnswers() {
     winners.push([1, 5, 9]);
     winners.push([3, 5, 7]);
 }
+/**
+ * 
+ * @returns {Number} num
+ */
 function checkWinner() {
     // check if current player has a winning hand
     // only stsrt checking when player x has size number of selections
@@ -99,15 +116,15 @@ function checkWinner() {
         playerSelections = player2Selections;
     if (playerSelections.length >= size) {
         // check if any 'winners' are also in your selections
-        for (i = 0; i < winners.length; i++) {
+        for (let i = 0; i < winners.length; i++) {
             let sets = winners[i];  // winning hand
             let setFound = true;
-            for (r = 0; r < sets.length; r++) {
+            for (let r = 0; r < sets.length; r++) {
                 // check if number is in current players hand
                 // if not, break, not winner
                 let found = false;
                 // players hand
-                for (s = 0; s < playerSelections.length; s++) {
+                for (let s = 0; s < playerSelections.length; s++) {
                     if (sets[r] == playerSelections[s]) {
                         found = true;
                         break;
@@ -128,4 +145,4 @@ function checkWinner() {
     }
     return win;
 }
-window.addEventListener('load', drawBoard);
+window.addEventListener("load", drawBoard);
