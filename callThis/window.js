@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 /*eslint-disable*/
 const abc = {
     salute: "",
@@ -13,4 +13,6 @@ const abc = {
         console.log(this.salute); //Bonjour
     }
 };
+console.log(global);
 abc.greet();  //Bonjour??  --> Hello!!??
+console.log("===============:", global);

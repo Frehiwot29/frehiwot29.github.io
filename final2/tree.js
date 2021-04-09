@@ -25,6 +25,15 @@ let node1 = {
     children: [node2, node3],
     value: null,
 };
+function display(node, result = []) {
+    console.log(node.name, ":", node.value);
+    if (node.children === null) return result;
+    for (let element of node.children) {
+        console.log(element);
+        display(element, result);
+    }
+}
+display(node1);
 /*function child(node) {
     if (node.children === null) return;
     for (let ch of node.children) {
@@ -33,17 +42,8 @@ let node1 = {
     }
 }
 child(node1);*/
-// function display(node, reuslt = []) {
-//     console.log(node.name, ":", node.value);
-//     if (node.children === null) return reuslt;
-//     for (let element of node.children) {
-//         console.log(element);
-//         display(element, reuslt);
-//     }
-// }
-//display(node1);
 
-function display(node, result = []) {
+/*function display(node, result = []) {
     if (node.children)
         result.push(node.name + " " + node.value)
     for (let node of node.children) {
@@ -51,4 +51,4 @@ function display(node, result = []) {
     }
     return result
 }
-console.log(display(node1))
+console.log(display(node1))*/
