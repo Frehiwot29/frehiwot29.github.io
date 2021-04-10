@@ -16,4 +16,6 @@ let lazy = {
 speedy.eat("apple");
 console.log(speedy.stomach); // apple
 // Lazy one's stomach is empty
-console.log(lazy.stomach); // <nothing>
+lazy.eat("orange");
+console.log(lazy.stomach); // apple
+console.log(lazy.eat());//<nothing>

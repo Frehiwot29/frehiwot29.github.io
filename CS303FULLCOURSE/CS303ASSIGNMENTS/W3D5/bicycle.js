@@ -31,7 +31,7 @@ console.log(mountainBike.applyBrake(10));
 console.log(mountainBike.speed);
 console.log(mountainBike.gear); //Nike
 console.log("mountainBike object", mountainBike);
-//console.log("mountainBike object", bicycle);
+console.log("mountainBike object", bicycle);
 
 //console.log(bicycle.prototype);
 

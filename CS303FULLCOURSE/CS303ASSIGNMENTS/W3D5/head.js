@@ -15,6 +15,6 @@ let pockets = {
     money: 2000,
     __proto__: bed
 };
-console.log(pockets.pen); // 3
+console.log(pockets.glasses); // 3
 console.log(bed.glasses); // 1
 console.log(table.money); // undefined

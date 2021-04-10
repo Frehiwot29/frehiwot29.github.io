@@ -1,26 +1,34 @@
 "use strict";
 /**
- * @return {number} num
+ * @returns {Calculator} constructor function
  */
  function Calculator() {
-    this.methods = {
-      "-": (num1, num2) => num1 - num2,
-      "+": (num1, num2) => num1 + num2
+    /**
+     * 
+     * @returns{Number} sum;
+     */
+    this.sum = function () {
+        return this.num1 + this.num2;
     };
-    this.calculate = function (str) {
-      let split = str.split(" "),
-        num1 = +split[0],
-        oop = split[1],
-        num2 = +split[2];
-      if (!this.methods[oop] || isNaN(num1) || isNaN(num2)) {
-        return NaN;
-      }
-      return this.methods[oop](num1, num2);
+    /**
+     * 
+     * @returns {Number} multiplication;
+     */
+    this.mul = function () {
+        return this.num1 * this.num2;
     };
-    this.addMethod = function (name, func) {
-      this.methods[name] = func;
+    /**
+     * 
+     * @returns {Number} subtraction;
+     */
+    this.sub = function () {
+        return this.num1 - this.num2;
     };
-  }
-  let calc = new Calculator;
-  //alert( calc.calculate("3 + 7") ); // 
-  console.log(calc.calculate("3 + 7"));//10
+    /**
+     * 
+     * @returns {Number} division;
+     */
+    this.div = function () {
+        return this.num1 / this.num2;
+    };
+}
