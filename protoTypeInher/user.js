@@ -14,8 +14,11 @@ function getAge() {
     return new Date().getFullYear() - this.birthDate.getFullYear();
 }
 User.prototype.getAge = getAge;
+
+// getFullName.__proto__ = User;
+// getAge.__proto__ = User;
 User.prototype.getFullName = getFullName;
 /*/complete the code so that the above functions reside in a single object and are inherited by all User
 objects //that are created using User as a constructor function.*/
 console.log(user1.getFullName()); //John Smith
-console.log(user1.getAge()); //21
+console.log(user2.getAge()); //21

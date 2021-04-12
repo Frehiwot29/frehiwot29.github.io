@@ -1,0 +1,64 @@
+"use strict";
+/*eslint-disable*/
+/* global exports */
+/* exports at end of file since exporting an object, which can only be referenced after definition 
+ comment out when running in browser */
+/*const Person = function () { };
+Person.prototype.initialize = function (name, age) {
+    this.name = name;
+    this.age = age;
+};
+Person.prototype.describe = function () {
+    return this.name + ", " + this.age + " years old.";
+};
+//studen class
+const Student = function () { };
+Student.prototype = new Person();
+Student.prototype.learn = function (subject) {
+    return (this.name + " just learned " + subject);
+};
+const john = new Student();
+john.initialize("John", 25);
+console.log(john.learn("Inheritance"));
+//teacher class
+const Teacher = function () { };
+Teacher.prototype = new Person();
+Teacher.prototype.teach = function (subject) {
+    console.log(this.name + "  is now teaching  " + subject);
+}
+const bob = new Teacher();
+bob.initialize("Bob", 25);
+//bob.teach("Physics");
+/* comment out when running in browser */
+//module.exports = { Teacher, Student };*/
+//"use strict";
+/* global exports */
+/* exports at end of file since exporting an object, which can only be referenced after definition 
+ comment out when running in browser */
+const Person = function () { };
+Person.prototype.initialize = function (name, age) {
+    this.name = name;
+    this.age = age;
+};
+Person.prototype.describe = function () {
+    return this.name + ", " + this.age + " years old.";
+};
+const Student = function () { };
+Student.prototype = new Person();
+Student.prototype.learn = function (subject) {
+    return (this.name + " just learned " + subject);
+};
+const Teacher = function () { };
+Teacher.prototype = new Person();
+Teacher.prototype.teach = function (subject) {
+    return (this.name + " is now teaching " + subject);
+};
+const john = new Student();
+john.initialize("John", 25);
+console.log(john.learn("Inheritance"));
+const bob = new Teacher();
+bob.initialize("Bob", 25);
+console.log(bob.teach("Physics"));
+
+/* comment out when running in browser */
+//module.exports = { Teacher, Student };
