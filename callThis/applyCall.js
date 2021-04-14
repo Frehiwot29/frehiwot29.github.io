@@ -14,6 +14,5 @@ printName.call(obj1, 30, "127 MarthinLuther king ")
 printName.apply(obj1, [30, "127 MarthinLuther king "])
 printName.call(obj2, 31, "123 roxbery crossing")
 printName.apply(obj2, [31, "123 roxbery crossing"])
-
 printName.bind(obj2, 31, "123 roxbery crossing")()
 printName.bind(obj1, 31, "123 roxbery crossing")()
