@@ -1,0 +1,109 @@
+Lesson 8:
+Level 1:
+R-4.5 
+Suppose we are given two n-element sorted sequences A and B that should not 
+be viewed as sets (that is, A and B may contain duplicate entries). Give an O(n)-time 
+pseudo-code algorithm for computing a sequence representing the set A U B (with no 
+duplicates).
+    
+     Algorithm merge(A, B, C)
+     Input sequences A, B with n/2 elements each, comparator C
+     Output sorted sequence of A U B
+             S <- empty sequence
+     While ﬧA.isEmpty() /\ ﬧB.isEmpty() do
+     If C.isLessThan (B.first().element(), A.first().element()) then
+           e<- B.remove(B.first())
+     If ﬧC.isEqualTo (S.last().element(), e) then
+          S.insertLast(e)elsee <- A.remove(A.first())
+     If ﬧC.isEqualTo (S.last().element(), e) then
+            S.insertLast(e)
+     While ﬧA.isEmpty() do
+          e <- A.remove(A.first())
+     If ﬧC.isEqualTo(S.last().element(), e) then
+          S.insertLast(e)While ﬧB.isEmpty() do
+            e <- B.remove(B.first())
+     If ﬧC.isEqualTo(S.last().element(), e) then
+             S.insertLast(e)
+     Return S 
+
+-4.10 Suppose we are given an n-element sequence S such that each element in S 
+represents a different vote in an election, where each vote is given as an integer 
+representing the ID of the chosen candidate. Without making any assumptions about 
+who is running or even how many candidates there are, design an efficient algorithm to 
+see who wins the election S represents, assuming the candidate with the most votes 
+wins.
+Algorithm electionResult(seq) 
+      v := seq.first()//1
+     count := 0//1
+     eachCount := 0//1
+     secondCount := 0//1
+     firstWinner := v//1
+     secondWinner := v//1
+     result := []//1
+    while (!seq.isLast(v)) do //n
+        eachCount := countVote(seq, v)//n*n
+        if eachCount != count //n
+            if (eachCount > count) //n/2
+                secondCount := count //n/2
+                secondWinner := firstWinner//n/2
+                count := eachCount//n/2
+                firstWinner := v//n/2
+             else if (eachCount > secondCount) //n/2
+                secondCount := eachCount//n/2
+                secondWinner := v    //n/2
+        v := seq.after(v)//n 
+    }
+    eachCount := countVote(seq, v)//1
+    if (eachCount !== count) //1
+        if (eachCount > count) //1
+            secondCount := count
+            secondWinner := firstWinner
+            count := eachCount
+            firstWinner := v
+         else if (eachCount > secondCount) 
+            secondCount := eachCount
+            secondWinner := v
+        
+    result := []
+    result.push(firstWinner)    //1
+    result.push(secondWinner)   //1
+    return result    //1
+
+//O(n^2)
+Algorthim countVote(seq, v)  //
+     p := seq.first()   //1
+    count := 0     //1
+    while (!seq.isLast(p)) //n
+        if (v.element() === p.element())   //n
+            count++     //n
+        p = seq.after(p)   //n
+    
+    if (v.element() === p.element())   //1
+        count++    //1
+    return count  //1
+    
+Let L be a List of objects colored either red, green, or blue. Design an in-place Algorithm
+sortRBG(L) that places all red objects in list L before the blue colored objects, and all the blue 
+objects before the green objects. Thus the resulting List will have all the red objects followed by 
+the blue objects, followed by the green objects. Hint: use the Method swap Elements to move the 
+elements around in the List. To receive full credit, you must use positions for traversal, e.g., first, 
+last, after, before, swap Elements, etc. which is necessary to make it in-place.
+
+Algorithm sortRBG(L)
+  B <- new array of size 3
+for i <- 0 to 2 do
+    B[i] <- new List
+while ! L.isEmpty() do
+      e <- L.remove(L.first())
+       bckt <- getKey(e)
+      B[bckt].insertLast(e)
+While(!B.is.Empty())// insert back into 
+     L.insertlast(B.remove(B.first())
+        return L
+Algorithm getKey(e)
+  if color(e) = RED then // other way e.color()
+       return 0
+else if color(e) = BLUE th
+      return 1
+else  
+       return 2

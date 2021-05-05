@@ -1,0 +1,90 @@
+Level 1:
+A. Design a pseudo code algorithm to take a Sequence and remove all duplicate elements 
+from the Sequence. Is the algorithm the same for both a List or a Sequence? Explain. 
+Analyze your algorithm twice, once assuming it is a Sequence and then again assuming it 
+is a List. Which ADT is a better choice for this problem? Implement your choice in 
+JavaScript.
+
+Algorithm removeDulicate(L)          #sequance
+         p:=L.first()                  n
+         while L.isLast()!=p do        n
+           removeDulcateHelper(L,p)    n
+         if !L.isLast(p) then          n
+            p:=L.after(p)              n
+ Algorithm removeDulcateHelper(L,p)
+         q:=L.after(p)                 n
+         while !L.isLast(q) do         n
+        if q.elements()=p.elements() then    n
+         q:=L.before(q)                      n
+         L.remove(L.after(q))                n
+        if !L.isLast(q) then                 n
+            q:=L.after(q)                    n
+
+B. Design an algorithm, isPermutation(A,B) that takes two sequences A and B and 
+determines whether or not they are permutations of each other, i.e., same elements 
+but possibly occurring in a different order. Hint: assume that A and B do not
+contain duplicates (later we will allow duplicates).
+What is the worst-case time complexity of your algorithm? Justify your answer.
+Implement your algorithm in JavaScript using either the Sequence or the List 
+class/program provided.  
+
+
+   Algorithm isPermutation(A, B)                   #sequance
+  1          if A.size() != B.size()                  1
+               return false;                          1
+    
+  1   p := A.first();                                 1
+  n    while !A.isLast do                             n
+  n^2     if !contains(B, p.element(), B.first())     n^2
+   1         return false;                            1
+        
+  n    p := A.after(p)                                n
+  n     if !contains(B, p.element(), B.first())       n
+  1         return false;                             n
+        
+        else 
+  1         return true;                              1
+        
+  
+       Algorithm contains(B, elem, p) 
+  n        if elem === p.element()                    n
+  1          return true;                             1
+    
+  n       if B.isLast(p)                              n
+  1         return false;                             1
+         else 
+  n          return contains(B, elem, B.after(p));    n
+    
+
+
+
+          Algorithm removeDuplicate(L) 
+  1            p := L.first();                       1
+  n          while !L.isLast(p)                      n
+  n^2     if contains(L, p.element(), L.after(p))    n^2
+  n          p := L.after(p);                        n
+  n         L.remove(L.before(p))                    n
+         else 
+  n         p := L.after(p);                         n
+      
+  1  return L;                                       1
+
+
+C. Let L be a List of objects colored either red or blue. Design an in-place pseudo 
+code algorithm sortRB(L) that places all red objects in list L before the blue 
+colored objects. Thus the resulting List will have all the red objects followed by 
+the blue objects. Hint: use the method swapElements to move the elements 
+around in the List. To receive full credit, you must use positions for traversal, 
+e.g., first, last, after, before, swapElements, etc. which is necessary to make it inplace
+
+
+Algorithm sortRB(L)
+nextRed:=L.first()
+while !L.isLast(nextRed) /\ nextRed.element()===Red   do  
+        nextRed:=L.after(nextRed)
+        p:=nextRed
+     while !L.isLast(p) do
+      if p.L.isLast(p) do
+        L.swapElements(p,nextRed)
+        nextRed:=L.after(nextRed)
+     P:=L.after(p)   

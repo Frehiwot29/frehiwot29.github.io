@@ -1,0 +1,39 @@
+Level1
+1.pseudo code of stack(L)
+
+Algorithm push(L)
+return insertLast(elm)
+//////
+Algorithm pop()
+return remove(last)
+/////
+Algorithm element()
+return element();
+
+2.pseudo code of queue(L)
+Algorithm enqueue(L)
+return insertLast(elem)
+////
+Algorithm dequeue()
+return remove(first())
+
+
+Level2:
+C-2.2 Describe, in pseudo-code, how to implement the queue ADT using two stacks. 
+What is the running time of the enqueue() and dequeue() methods in this case?
+
+Algorithm enqueue(elem)
+   return stack.push(elem)
+ 
+
+Algorithm dequeue()
+   if stack.isEmpty() then 
+      while !stack.isEmpty() do
+      stack.push(stack.pop())
+   if stack.isEmpty() then 
+     throw a queueEmptyException
+     return stack.pop()
+
+
+
+

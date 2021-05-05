@@ -1,0 +1,56 @@
+Assignment 5
+Level 1:
+1.
+ (a) Define, in pseudo-code, an algorithm to calculate the height of a tree.
+  Hint: it needs to be recursive. 
+
+  Algorithem heigth(T)
+     if T.isEmpty() then 
+      return 0
+       p<--T.root()
+  if T.isExternal(p) then return 0
+     Lheight<--height(T,leftChild(p))
+     Rheigth<---height(T,rightChild(p))
+  return Max(Lheight,Rheigth)
+
+
+(b) Using the HW05-Tree.js, implement your algorithm in a JavaScript function Height(T). 
+    
+    function height(T) {
+    return hightHelper(T, T.root());
+}
+    function hightHelper(T, V) {
+       if (T.isExternal(V)) return 0
+    else {
+        let leftH = 1 + hightHelper(T, T.leftChild(V))
+        let rightH = 1 + hightHelper(T, T.rightChild(V))
+        if (leftH > rightH)
+            return leftH;
+        return rightH;
+    }
+}
+
+(c) Implement your algorithm using the EulerTour template class provided in HW05-
+Tree.js, i.e., create a subclass of EulerTour with a method that calculates the height.
+      
+class Height extends EulerTour {
+    // add your code here, i.e., override methods from EulerTour class
+    height(T) {
+        return this.eulerTour(T, T.root());  // this is your helper from the EulerTour Template class 
+    }
+    eulerTour(T, p) {
+        let leftH = 0;
+        let rightH = 0;
+        if (T.isExternal(p)) {
+            this.visitExternal(T, p);
+        } else {
+            this.visitPreOrder(T, p);
+            leftH = 1 + this.eulerTour(T, T.leftChild(p));
+            this.visitInOrder(T, p);
+            rightH = 1 + this.eulerTour(T, T.rightChild(p));
+            //this.visitPostOrder(T, p); 
+            if (leftH > rightH) return leftH
+            return rightH
+        }
+        return Math.max(leftH, leftH)
+    }

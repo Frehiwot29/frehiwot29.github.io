@@ -1,0 +1,44 @@
+Algorithm electionResult(seq) 
+     v := seq.first()  //1
+     count := 0//1
+     eachCount := 0  //1
+     secondCount := 0  //1
+     firstWinner := v  //1
+     secondWinner := v   //1
+     result := []    //1
+    while (!seq.isLast(v)) do //n
+        eachCount := countVote(seq, v)//n*n
+        if (eachCount != count) //n
+            if (eachCount > count)  then //n/2
+                secondCount := count  //n/2
+                secondWinner := firstWinner    //n/2
+                count := eachCount    //n/2
+                firstWinner := v      //n/2
+             else if (eachCount > secondCount)  then  //n/2
+                secondCount := eachCount     //n/2
+                secondWinner := v      //n/2
+        v := seq.after(v)         //n
+    eachCount = countVote(seq, v)    //1
+    if (eachCount !== count)    then //1
+        if (eachCount > count)   then //1
+            secondCount := count
+            secondWinner := firstWinner
+            count := eachCount
+            firstWinner = v
+         else if (eachCount > secondCount) 
+            secondCount := eachCount
+            secondWinner := v
+    result := []
+    result.push(firstWinner)//1
+    result.push(secondWinner)//1
+    return result//1
+Algorithm countVote(seq, v) {//
+     p := seq.first()//1
+     count := 0    //1
+    while (!seq.isLast(p)) do//n
+        if (v.element() === p.element())   then //n
+            count++     //n
+        p := seq.after(p)//n
+    if (v.element() === p.element())     then //1
+        count++    //1
+    return count    //1

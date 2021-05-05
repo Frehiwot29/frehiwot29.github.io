@@ -1,0 +1,52 @@
+Level 1:
+A. (a) Write a recursive method, sum(L), in pseudo-code to calculate the sum of the 
+integers in the List L of integers. Use positions to traverse the list. See the hint in 
+the lecture notes. Analyze line by line your algorithm.
+
+      Algorithm sumHelper(L,P)        #space time complaxty
+          If L.isLast(p) then              O(n)
+            Return p.elemnt()              O(1)                                                               
+           S<--sumHelper(L,L.after())      O(n)                                                                                                    
+           Return S+p.element()             O(n)                                                 
+                                                                                            
+      Algorithem Sum(L)
+           If L.isEmpty() then return 0     O(n)
+          Return sumHelper(L,L.first())     O(n)
+
+
+(b) Write a second recursive algorithm that uses the rank-based operations to 
+traverse the list to calculate the sum of the integers in a Sequence. Analyze your 
+algorithm line by line.
+
+       Algorithm sum(L)
+       if L.size()=0 then
+          throw Error("empty List");
+        return sumHelper(L,0)
+        Algorithm sumHelper(L,p)
+           if p=L.size()-1 then
+           return L.elemAtRank(p)
+           sum<--sumHelper(L,p+1)  
+       return sum + L.elemAtRanke(p)  
+
+
+(c) Choose the better algorithm, either (a) or (b), then implement that algorithm in 
+JavaScript using the List.js file or Sequence.js file provided in a previous 
+assignment.
+   
+
+B. Design a pseudo-code recursive method, findMax(L), that returns the maximum 
+number in the list L. Implement in JavaScript using the List.js file provided 
+previously.
+
+            Algorithm findMax(L)
+                return maxHelper(L,p)
+
+             Algorithem maxHelper(L,p)   
+                   input: L of numbers
+                   outPut: currentMax
+                   p<--L.first()
+                   currentMax<----L.first(p)
+             for i<---0 to L.size()-1 do
+                    if L[i]>currentMax
+                     currentMax<---L[i]
+             return currentMax

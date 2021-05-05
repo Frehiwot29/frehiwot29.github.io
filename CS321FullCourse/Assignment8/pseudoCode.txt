@@ -1,0 +1,55 @@
+                    Assignment 8
+
+A. Which, if any, of the following algorithms, bubble-sort, heap-sort, insertion sort, 
+merge-sort, and quick-sort, are stable? Briefly justify your answer.
+     => if you donot change order of those first two ones than your algorithm is stable
+        1.Stable algorithm
+          merge-sort
+          insertion sort
+          bubble-sort
+     => if you swap them it becomes unstable despite the overall result or 
+          order remain same     
+        2.unstable algorithm
+          Quick sort
+          Heap sort
+          selection sort  
+B. Is the bucket-sort algorithm in-place? Why or why not?
+   => No its not an in-place sorting algorthim. The whole idea is that input sorting 
+   them selves as they are moved to the brackets
+C. Illustrate the performance of the radix-sort algorithm on the following input sequence 
+(22, 15, 26, 44, 10, 3, 9, 13, 29, 25).
+      this is Radix sort
+       22, 15, 26, 44, 10, 3,  9, 13, 29, 25
+       10, 22, 3,  13, 44, 14, 25, 26, 9, 29
+       3,  9,  10, 13, 15, 22, 25, 26, 29, 44
+
+C-4.13  Suppose we are given two sequences A and B of n elements, possibly containing 
+duplicates, on which a total order relation is defined (i.e., has a comparator). Using a
+Priority Queue design an efficient pseudo-code algorithm for determining if A and B 
+contain the same set of elements (possibly in different orders and possibly containing 
+duplicates). What is the running time of this method? 
+
+Implement your solution to C-4.13 in JavaScript and create some tests.      
+
+Algorithm isPermutation(A,B)
+  
+1 if A.size() != B.size() then return false
+1      PA <- new Priority Queue
+1       p <- A.first()
+1      PA.insertItem(p.element(), p.element())
+N while ! PA.isLast(p) do
+n       p <- A.after(p)
+n log n PA.insertItem(p.element(), p.element())
+1     PB <- new Priority Queue
+1      p <- B.first()
+n      PB.insertItem(p.element(), p.element())
+n while ! PB.isLast(p) do
+n        p <- B.after(p)
+n   PB.insertItem(p.element(), null   
+n while ! PA.isEmpty() do
+n if PA.minKey() != PB.minKey() then // match each key
+1      return false
+n        PA.removeMin()
+n        PB.removeMin()
+1       return true    
+       
