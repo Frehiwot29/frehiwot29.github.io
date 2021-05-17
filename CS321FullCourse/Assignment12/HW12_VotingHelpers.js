@@ -2,16 +2,13 @@
 /*eslint-disable*/
 const Pair = require('./Item.js');
 const PQueue = require('./PriorityQueue.js');
-
 class VotingHelpers {
-    
     _countElementsOfSeq(seq, D) {
         // count the elements in seq and store the count for each candidate in Dictionary D
     }
     _countElementsOfArray(arr, D) {
         // count the elements in seq and store the count for each candidate in Dictionary D
     }
-
     _findWinnersFromDictionary(D) {
         // The count for each candidate should be in Dictionary D
         // Iterate through the Items (ID, count) and find the winners and put in the array 
@@ -19,7 +16,6 @@ class VotingHelpers {
         let winners = [];
         return winners;
     }
-
     findWinnersSeqUsingDict(seq, D) {
         this._countElementsOfSeq(seq, D);
         // D.print();
@@ -32,7 +28,6 @@ class VotingHelpers {
         let winners = this._findWinnersFromDictionary(D);
         return winners;
     }
-
     _insertSeqIntoPQ(seq, PQ) {
         // insert the elements (candidate ID's) from Sequence seq into the Priority Queue PQ
         let iter = seq.elements();
@@ -41,7 +36,6 @@ class VotingHelpers {
     _insertArrayIntoPQ(arr, PQ) {
         // insert the elements (candidate ID's) from Sequence seq into the Priority Queue PQ
     }
-
     _findWinnersFromPQ(PQ) {
         // Traverse the Priority Queue and determine the winners
         let winners = [];
@@ -58,5 +52,4 @@ class VotingHelpers {
         return this._findWinnersFromPQ(PQ);
     }    
 }
-
 exports.VotingHelpers = VotingHelpers;

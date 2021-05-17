@@ -32,6 +32,7 @@ Algorithm electionResult(seq)
     result.push(firstWinner)//1
     result.push(secondWinner)//1
     return result//1
+    
 Algorithm countVote(seq, v) {//
      p := seq.first()//1
      count := 0    //1

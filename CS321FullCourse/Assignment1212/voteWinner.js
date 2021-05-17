@@ -1,7 +1,7 @@
 "use strict";
 /*eslint-disable*/
 /**
- * C-4.10 
+ * C-4.11 
  * Suppose we are given an n-element sequence S such that each element in S 
  * represents a different vote in an election, where each vote is given as an integer 
  * representing the ID of the chosen candidate. Without making any assumptions about 
@@ -69,16 +69,18 @@ list1.insertFirst("Kalab");
 list1.insertFirst("Simon");
 list1.insertFirst("Kalab");
 list1.insertFirst("Simon");
+list1.insertFirst("Simon");
+list1.insertFirst("Simon");
 list1.insertFirst("Aster");
 list1.insertFirst("Aster");
 list1.insertFirst("Aster");
-list1.insertFirst("Adonay");
-list1.insertFirst("Adonay");
-list1.insertFirst("Adonay");
-list1.insertFirst("Adonay");
-list1.insertFirst("Adonay");
-list1.insertFirst("Adonay");
-list1.insertFirst("Adonay");
+list1.insertFirst("Adonay");//6
+list1.insertFirst("Adonay");//5
+list1.insertFirst("Adonay");//4
+list1.insertFirst("Adonay");//3
+list1.insertFirst("Adonay");//2
+list1.insertFirst("Adonay");//1
+list1.insertFirst("Adonay");//7
 list1.insertFirst("Frehiwot");
 list1.insertFirst("Frehiwot");
 console.log(electionResult(list1))
