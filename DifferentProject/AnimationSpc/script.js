@@ -97,7 +97,7 @@ body{
             lat = p.coords.latitude;//+ve
             long = p.coords.longitude;//-ve
             let result = await fetch(
-                "https://mapquestapi.com/geocoding/v1/reverse?key=q5N7YWFQnHlQCfx0KyD5d1qoATAAFezV&location=" +
+                "http://mapquestapi.com/geocoding/v1/reverse?key=q5N7YWFQnHlQCfx0KyD5d1qoATAAFezV&location=" +
                 lat +
                 "," +
                 long

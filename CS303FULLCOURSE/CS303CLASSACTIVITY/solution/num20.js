@@ -24,3 +24,8 @@ rectangle.length=20;
 rectangle.width=2,
 console.log(rectangle.area())
 console.log(rectangle.circumfernce())
+
+
+
+
+
